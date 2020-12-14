@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scholarship_app/create_login.dart';
 import 'package:scholarship_app/home_signin_widget.dart';
 
 class MenuFrame extends StatelessWidget {
@@ -11,7 +12,7 @@ class MenuFrame extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 28.0),
             child: Column(
               children: <Widget>[
-                SizedBox(height: 120.0,
+                SizedBox(height: 30.0,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -33,7 +34,7 @@ class MenuFrame extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 30.0,
+                SizedBox(height: 20.0,
                 ),
                 Text(
                   'Scholarship Program',
@@ -43,14 +44,16 @@ class MenuFrame extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 80.0,
+                SizedBox(height: 30.0,
                 ),
                 Expanded(
                   child: PageView(children: <Widget>[
-                    HomeSignInWidget(),
+                    CreateLogin(),
                     HomeSignInWidget(),
                   ],
                   ),
+                ),
+                SizedBox(height: 25.0,
                 ),
               ],
             ),
