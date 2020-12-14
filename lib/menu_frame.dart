@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:scholarship_app/create_login.dart';
 import 'package:scholarship_app/home_signin_widget.dart';
+import 'package:scholarship_app/sign_in.dart';
 
 class MenuFrame extends StatelessWidget {
+  PageController pageController = PageController();
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -47,9 +50,27 @@ class MenuFrame extends StatelessWidget {
                 SizedBox(height: 30.0,
                 ),
                 Expanded(
-                  child: PageView(children: <Widget>[
-                    CreateLogin(),
-                    HomeSignInWidget(),
+                  child: PageView(controller: pageController,
+                    children: <Widget>[
+                    HomeSignInWidget(
+                      goToSignIn: (){
+                      pageController.animateToPage(1,
+                          duration: Duration(milliseconds: 200),
+                          curve: Curves.easeIn);
+                    },
+                      goToSignUp: (){
+                      pageController.animateToPage(2,
+                          duration: Duration(milliseconds: 200),
+                          curve: Curves.easeIn);
+                    },
+                    ),
+                    SignIn(),
+                    CreateLogin(
+                      cancelBackToHome: (){
+                      pageController.animateToPage(0,
+                          duration: Duration(milliseconds: 200),
+                          curve: Curves.easeIn);
+                      },),
                   ],
                   ),
                 ),

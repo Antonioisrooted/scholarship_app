@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class CreateLogin extends StatefulWidget {
+  final Function cancelBackToHome;
+
+  CreateLogin({this.cancelBackToHome});
+
   @override
   _CreateLoginState createState() => _CreateLoginState();
 }
@@ -132,13 +136,18 @@ class _CreateLoginState extends State<CreateLogin> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-            Text(
-                'CANCEL',
-            style: TextStyle(
-              color: Colors.black87,
-              fontSize: 14.0,
-              fontWeight: FontWeight.bold,
-            ),
+            InkWell(
+              onTap: () {
+              widget.cancelBackToHome();
+            },
+              child: Text(
+                  'CANCEL',
+              style: TextStyle(
+                color: Colors.black87,
+                fontSize: 14.0,
+                fontWeight: FontWeight.bold,
+              ),
+              ),
             ),
             SizedBox(
               width: 170.0,
