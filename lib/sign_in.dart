@@ -8,6 +8,7 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
   bool _rememberPassword = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
