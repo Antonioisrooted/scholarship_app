@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scholarship_app/menu_frame.dart';
+import 'package:scholarship_app/school_information.dart';
 import 'package:scholarship_app/user_bio.dart';
 
 void main() {
@@ -30,7 +31,9 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home:
-      UserBio(),
+      // MenuFrame(),
+      // UserBio(),
+      SchoolInformation(),
     );
   }
 }
