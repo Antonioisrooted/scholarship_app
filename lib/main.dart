@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scholarship_app/menu_frame.dart';
+import 'package:scholarship_app/user_bio.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MenuFrame(),
+      home:
+      UserBio(),
     );
   }
 }

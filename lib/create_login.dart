@@ -133,7 +133,7 @@ class _CreateLoginState extends State<CreateLogin> {
             height: 20.0,
           ),
           _user == null ? Container():
-              Text("The user ${_user.username}, ${_user.email}, ${_user.token}is created successfully"),
+              Text("The user ${_user.username}, ${_user.email}, ${_user.token} is created successfully"),
           Row(
             children: <Widget>[
               Checkbox(
