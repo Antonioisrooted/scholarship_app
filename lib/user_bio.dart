@@ -19,6 +19,9 @@ class _UserBioState extends State<UserBio> {
   String _studentLevel;
   String _completionYear;
 
+  String _reasons;
+  String _letter;
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   Widget _buildFullName(){
@@ -182,6 +185,38 @@ class _UserBioState extends State<UserBio> {
     );
   }
 
+  Widget _buildReasons(){
+    return TextFormField(
+      decoration: InputDecoration(labelText: 'Reasons why you should be sponsored'),
+      validator: (String value) {
+        if (value.isEmpty) {
+          return 'Reasons why you should be sponsored is required';
+        }
+
+        return null;
+      },
+      onSaved: (String value){
+        _reasons = value;
+      },
+    );
+  }
+
+  Widget _buildLetter(){
+    return TextFormField(
+      decoration: InputDecoration(labelText: 'Recommendation Letter'),
+      validator: (String value) {
+        if (value.isEmpty) {
+          return 'Recommendation letter is required';
+        }
+
+        return null;
+      },
+      onSaved: (String value){
+        _letter = value;
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -228,6 +263,18 @@ class _UserBioState extends State<UserBio> {
             _buildStudentLevel(),
             SizedBox(height: 20),
             _buildCompletionYear(),
+            SizedBox(height: 50,),
+
+            Text(' More Information ',
+              style: TextStyle(
+                color: Colors.black87,
+                fontSize: 24.0,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            _buildReasons(),
+            SizedBox(height: 20),
+            _buildLetter(),
 
             SizedBox(height: 50),
             RaisedButton(
@@ -256,6 +303,8 @@ class _UserBioState extends State<UserBio> {
                   print(_schoolAddress);
                   print(_studentLevel);
                   print(_completionYear);
+                  print(_reasons);
+                  print(_letter);
                 },
             )
           ],
