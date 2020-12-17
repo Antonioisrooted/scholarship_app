@@ -14,6 +14,11 @@ class _UserBioState extends State<UserBio> {
   String _birthCertificateNumber;
   String _idNumber;
 
+  String _schoolName;
+  String _schoolAddress;
+  String _studentLevel;
+  String _completionYear;
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   Widget _buildFullName(){
@@ -112,10 +117,75 @@ class _UserBioState extends State<UserBio> {
     );
   }
 
+
+  Widget _buildSchoolName(){
+    return TextFormField(
+      decoration: InputDecoration(labelText: 'School Name'),
+      validator: (String value) {
+        if (value.isEmpty) {
+          return 'School name is required';
+        }
+
+        return null;
+      },
+      onSaved: (String value){
+        _schoolName = value;
+      },
+    );
+  }
+
+  Widget _buildSchoolAddress(){
+    return TextFormField(
+      decoration: InputDecoration(labelText: 'School Address'),
+      validator: (String value) {
+        if (value.isEmpty) {
+          return 'School Address is required';
+        }
+
+        return null;
+      },
+      onSaved: (String value){
+        _schoolAddress = value;
+      },
+    );
+  }
+
+  Widget _buildStudentLevel(){
+    return TextFormField(
+      decoration: InputDecoration(labelText: 'Academic level of the student'),
+      validator: (String value) {
+        if (value.isEmpty) {
+          return 'Academic level is required';
+        }
+
+        return null;
+      },
+      onSaved: (String value){
+        _studentLevel = value;
+      },
+    );
+  }
+
+  Widget _buildCompletionYear(){
+    return TextFormField(
+      decoration: InputDecoration(labelText: 'Expected year of completion'),
+      validator: (String value) {
+        if (value.isEmpty) {
+          return 'Expected year of completion is required';
+        }
+
+        return null;
+      },
+      onSaved: (String value){
+        _completionYear = value;
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("User Bio_Data")),
+      appBar: AppBar(title: Text("Information form")),
       body: Container(
         margin: EdgeInsets.all(24),
         child: Form(
@@ -124,17 +194,41 @@ class _UserBioState extends State<UserBio> {
             child:Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text(' User Bio_Data ',
+              style: TextStyle(
+              color: Colors.black87,
+              fontSize: 24.0,
+              fontWeight: FontWeight.w600,
+              ),
+            ),
             _buildFullName(),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             _buildAddress(),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             _buildPhoneNumber(),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             _buildEmail(),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             _buildBirthCertificateNumber(),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             _buildIdNumber(),
+            SizedBox(height: 50,),
+
+            Text(' School Information ',
+              style: TextStyle(
+                color: Colors.black87,
+                fontSize: 24.0,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            _buildSchoolName(),
+            SizedBox(height: 20),
+            _buildSchoolAddress(),
+            SizedBox(height: 20),
+            _buildStudentLevel(),
+            SizedBox(height: 20),
+            _buildCompletionYear(),
+
             SizedBox(height: 50),
             RaisedButton(
                 child: Text(
@@ -157,6 +251,11 @@ class _UserBioState extends State<UserBio> {
                   print(_email);
                   print(_birthCertificateNumber);
                   print(_idNumber);
+
+                  print(_schoolName);
+                  print(_schoolAddress);
+                  print(_studentLevel);
+                  print(_completionYear);
                 },
             )
           ],

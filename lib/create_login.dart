@@ -49,7 +49,7 @@ class _CreateLoginState extends State<CreateLogin> {
         child: Column(
         children : <Widget>[
           Text(
-            'CREATE YOUR LOGIN',
+            'CREATE YOUR ACCOUNT',
            style: TextStyle(
             color: Colors.black87,
            fontSize: 24.0,
