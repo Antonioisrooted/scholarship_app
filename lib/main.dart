@@ -32,10 +32,10 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home:
-        Sponsorship(),
+        // Sponsorship(),
       // MenuFrame(),
       // UserBio(),
-      // MyDrawer(),
+      MyDrawer(),
     );
   }
 }
