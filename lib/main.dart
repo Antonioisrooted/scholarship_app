@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scholarship_app/menu_frame.dart';
+import 'package:scholarship_app/my_drawer.dart';
 import 'package:scholarship_app/user_bio.dart';
 
 void main() {
@@ -31,7 +32,8 @@ class MyApp extends StatelessWidget {
       ),
       home:
       // MenuFrame(),
-      UserBio(),
+      // UserBio(),
+      MyDrawer(),
     );
   }
 }
