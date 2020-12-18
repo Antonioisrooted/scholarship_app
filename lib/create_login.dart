@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'dart:async';
 import 'package:http/http.dart';
+import 'package:scholarship_app/sponsorships.dart';
 import 'dart:convert';
 
 import 'user_model.dart';
@@ -195,6 +196,9 @@ class _CreateLoginState extends State<CreateLogin> {
                 final String password = passwordController.text;
 
                 final UserModel user = await createUser(email, password, userName);
+
+                Navigator.pop(context);
+                Navigator.push(context, new MaterialPageRoute(builder: (context) => new Sponsorship()));
 
                 setState(() {
                   _user = user;

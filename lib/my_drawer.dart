@@ -18,6 +18,7 @@ class _MyDrawerState extends State<MyDrawer> {
       appBar: new AppBar
         (
         title: new Text(' Admin '),
+        centerTitle: true,
       ),
       body: new Text(' Welcome '),
     );
@@ -34,14 +35,7 @@ class DrawerCodeOnly extends StatelessWidget {
         (
         children: <Widget>
         [
-          // new DrawerHeader
-          //   (
-          //   child: Text(' Menu '),
-          //   decoration: new BoxDecoration
-          //     (
-          //     color: Colors.white70,
-          //   ),
-          // ),
+
           new ListTile
             (
             title: new Text(' All Sponsorships '),

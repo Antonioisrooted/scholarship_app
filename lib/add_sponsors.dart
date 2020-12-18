@@ -10,6 +10,7 @@ class AddSponsors extends StatelessWidget {
       appBar: new AppBar
         (
         title: new Text(' Add Sponsors '),
+        centerTitle: true,
       ),
       body: new Text(' Hey I am body '),
     );

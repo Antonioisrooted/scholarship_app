@@ -10,6 +10,7 @@ class ViewApplicants extends StatelessWidget {
       appBar: new AppBar
         (
         title: new Text(' View Application '),
+        centerTitle: true,
       ),
       body: new Text(' Hey I am body '),
     );
