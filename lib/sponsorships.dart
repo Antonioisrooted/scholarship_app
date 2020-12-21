@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:scholarship_app/user_bio.dart';
 
 class Sponsorship extends StatefulWidget {
   @override
   _SponsorshipState createState() => _SponsorshipState();
 }
+
 
 class _SponsorshipState extends State<Sponsorship> {
   @override
@@ -19,7 +21,7 @@ class _SponsorshipState extends State<Sponsorship> {
     );
   }
   Widget getBody(){
-    return ListView.builder(itemBuilder: (contex,index){
+    return ListView.builder(itemBuilder: (context,index){
       return getCard();
     }
     );
@@ -49,16 +51,18 @@ class _SponsorshipState extends State<Sponsorship> {
                   children: <Widget>[
                     Text('Test Scholarship', style: TextStyle(fontSize: 16),),
                     SizedBox(height: 10,),
-                    Text('Apply for the scholarship', style: TextStyle(fontSize: 16),),
+            Text('Click here to apply for scholarship', style: TextStyle(fontSize: 16),
+                    ),
+                   ]
+                  ),
                   ],
-                )
-              ],
+               ),
             ),
           ),
-        ),
-      );
+        );
     }
-  }
+    }
+
 
 
 

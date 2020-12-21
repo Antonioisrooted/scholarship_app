@@ -15,7 +15,7 @@ class ViewApplicants extends StatelessWidget {
     );
   }
   Widget getBody(){
-    return ListView.builder(itemBuilder: (contex,index){
+    return ListView.builder(itemBuilder: (context,index){
       return getCard();
     }
     );
