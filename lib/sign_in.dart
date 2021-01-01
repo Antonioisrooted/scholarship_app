@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import 'package:scholarship_app/signmodel.dart';
+import 'package:scholarship_app/sponsorships.dart';
+import 'package:scholarship_app/user_model.dart';
+import 'package:http/http.dart'as http;
 
 class SignIn extends StatefulWidget {
 
@@ -6,8 +11,29 @@ class SignIn extends StatefulWidget {
   _SignInState createState() => _SignInState();
 }
 
+Future<SignModel> createUser(String email, String password) async{
+  String apiUrl = "https://geoproserver.herokuapp.com/api/login/";
+
+  final response = await post(apiUrl, body:{
+    "email": email,
+    "password": password
+  });
+  if(response.statusCode == 201){
+    final String responseString = response.body;
+
+    return signModelFromJson(responseString);
+  }else{
+    return null;
+  }
+}
+
 class _SignInState extends State<SignIn> {
   bool _rememberPassword = false;
+
+  SignModel _user;
+
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +49,7 @@ class _SignInState extends State<SignIn> {
             ),
           ),
           TextField(
+            controller: emailController,
             decoration: InputDecoration(
               enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
@@ -46,6 +73,7 @@ class _SignInState extends State<SignIn> {
             height: 20.0,
           ),
           TextField(
+            controller: passwordController,
             obscureText: true,
             decoration: InputDecoration(
               enabledBorder: UnderlineInputBorder(
@@ -69,6 +97,8 @@ class _SignInState extends State<SignIn> {
           SizedBox(
             height: 20.0,
           ),
+          _user == null ? Container():
+          Text("The user ${_user.email}, ${_user.token} is created successfully"),
           Row(
             children: <Widget>[
               Checkbox(
@@ -95,23 +125,37 @@ class _SignInState extends State<SignIn> {
           Container(
             width: double.infinity,
             padding: EdgeInsets.symmetric(
-            vertical: 10.0,
-            horizontal: 20.0,
-          ),
+              vertical: 10.0,
+              horizontal: 20.0,
+            ),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(
                 30.0,
               ),
             ),
-            child: Text(
-              'LOG IN',
-              style: TextStyle(
-                color: Colors.black87,
-                fontSize: 14.0,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
+            child: RaisedButton(
+                child: Text(
+                  'SIGN IN',
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onPressed: () async{
+                  final String email = emailController.text;
+                  final String password = passwordController.text;
+
+                  final SignModel user = await createUser(email, password);
+
+                  Navigator.pop(context);
+                  Navigator.push(context, new MaterialPageRoute(builder: (context) => new Sponsorships()));
+
+                  setState(() {
+                    _user = user;
+                  });
+                }
             ),
           ),
           SizedBox(
@@ -137,3 +181,4 @@ class _SignInState extends State<SignIn> {
     );
   }
 }
+

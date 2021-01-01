@@ -198,7 +198,7 @@ class _CreateLoginState extends State<CreateLogin> {
                 final UserModel user = await createUser(email, password, userName);
 
                 Navigator.pop(context);
-                Navigator.push(context, new MaterialPageRoute(builder: (context) => new Sponsorship()));
+                Navigator.push(context, new MaterialPageRoute(builder: (context) => new Sponsorships()));
 
                 setState(() {
                   _user = user;

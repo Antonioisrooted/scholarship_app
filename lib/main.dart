@@ -32,8 +32,8 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home:
-        Sponsorship(),
-      // MenuFrame(),
+        // Sponsorship(),
+      MenuFrame(),
       // UserBio(),
       // MyDrawer(),
     );
