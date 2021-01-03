@@ -152,7 +152,7 @@ class _SponsorshipsScholarshipState  extends State<SponsorshipsScholarship> {
 
   double _height;
   double _width;
-  double _pixelRatio;
+  // double _pixelRatio;
 
 
   @override
@@ -160,7 +160,7 @@ class _SponsorshipsScholarshipState  extends State<SponsorshipsScholarship> {
 
     _height = MediaQuery.of(context).size.height;
     _width = MediaQuery.of(context).size.width;
-    _pixelRatio = MediaQuery.of(context).devicePixelRatio;
+    // _pixelRatio = MediaQuery.of(context).devicePixelRatio;
 
     return Material(
       child: Container(
@@ -177,7 +177,8 @@ class _SponsorshipsScholarshipState  extends State<SponsorshipsScholarship> {
                   onTap: () {
                     Navigator.push( context,
                       MaterialPageRoute(
-                        builder: (context) {
+                        builder: (context)
+                        {
                           return UserBio();
                         },
                       ),

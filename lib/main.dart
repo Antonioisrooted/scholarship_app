@@ -33,9 +33,9 @@ class MyApp extends StatelessWidget {
       ),
       home:
         // Sponsorship(),
-      MenuFrame(),
+      // MenuFrame(),
       // UserBio(),
-      // MyDrawer(),
+      MyDrawer(),
     );
   }
 }
