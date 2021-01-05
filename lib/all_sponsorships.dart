@@ -38,7 +38,7 @@ class AllSponsorshipsScholarship extends StatefulWidget {
 class _AllSponsorshipsScholarshipState  extends State<AllSponsorshipsScholarship> {
 
   final String url = "https://geoproserver.herokuapp.com/api/sponsorship";
-  List data;
+  List data = [];
 
   @override
   void initState() {
