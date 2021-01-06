@@ -37,7 +37,7 @@ class _AddSponsorsPgState extends State<AddSponsorsPg> {
   bool _large;
   bool _medium;
 
-  CreateModel _scholarship;
+  CreateModel _scholarship ;
 
   TextEditingController scholarshipNameController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();

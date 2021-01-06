@@ -5,9 +5,9 @@ import 'package:http/http.dart';
 import 'create_model.dart';
 
 Future<CreateModel> createScholarship(String name, String description) async {
-  String apiUrl = "https://geoproserver.herokuapp.com/api/sponsorship";
+  String apiUrl = "https://geoproserver.herokuapp.com/api/sponsorship/";
 
-  final response = await post(apiUrl, headers: {HttpHeaders.authorizationHeader: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMiwidXNlcm5hbWUiOiJzdGFmZiIsImVtYWlsIjoiZ2Vvc3RhZmZAZ21haWwuY29tIiwiZXhwIjoxNjEwMzYzMDYyLCJpc19zdGFmZiI6dHJ1ZX0.ooGx7dAZ360er2NcMAgK0KTObYZbgo6SukPxRck1b0M"},
+  final response = await post(apiUrl, headers: {HttpHeaders.authorizationHeader: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMiwidXNlcm5hbWUiOiJzdGFmZiIsImVtYWlsIjoiZ2Vvc3RhZmZAZ21haWwuY29tIiwiZXhwIjoxNjEwNDMyNjQ0LCJpc19zdGFmZiI6dHJ1ZX0.fNb2Bs-FOW-K9IQjXn0abdwlTXQzNpHSyLYQ02krHtc"},
       body: {
     "name": name,
     "description": description

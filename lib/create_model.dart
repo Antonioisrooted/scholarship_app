@@ -8,18 +8,22 @@ class CreateModel{
   CreateModel({
     this.name,
     this.description,
+
   });
 
   String name;
   String description;
 
+
   factory CreateModel.fromJson(Map<String, dynamic> json) => CreateModel(
     name: json["name"],
     description: json["description"],
+
   );
 
   Map<String, dynamic> toJson() => {
     "name": name,
-    "description": description
+    "description": description,
+
   };
 }
