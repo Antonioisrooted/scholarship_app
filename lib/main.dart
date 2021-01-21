@@ -34,8 +34,8 @@ class MyApp extends StatelessWidget {
       home:
         // Sponsorship(),
       // MenuFrame(),
-      // UserBio(),
-      MyDrawer(),
+      UserBio(),
+      // MyDrawer(),
     );
   }
 }
