@@ -41,6 +41,7 @@ class _UserBioState extends State<UserBio> {
 
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey2 = GlobalKey<FormState>();
 
   void initState() {
     super.initState();
@@ -196,7 +197,7 @@ class _UserBioState extends State<UserBio> {
       margin: EdgeInsets.only(
           left: _width / 12.0, right: _width / 12.0, top: _height / 15.0),
       child: Form(
-        key: _formKey,
+        key: _formKey2,
         child: Column(
           children: <Widget>[
             school_nameTextFormField(),
