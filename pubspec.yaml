@@ -21,6 +21,8 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  jwt_decoder: ^1.0.4
+  shared_preferences: ^0.5.12+4
   flutter:
     sdk: flutter
 

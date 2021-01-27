@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scholarship_app/all_sponsorships.dart';
 import 'package:scholarship_app/menu_frame.dart';
 import 'package:scholarship_app/my_drawer.dart';
 import 'package:scholarship_app/sponsorships.dart';
@@ -32,10 +33,11 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home:
-        // Sponsorship(),
+        // Sponsorships(),
       // MenuFrame(),
-      UserBio(),
-      // MyDrawer(),
+      // UserBio(),
+      MyDrawer(),
+      // AllSponsorships(),
     );
   }
 }

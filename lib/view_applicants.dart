@@ -8,7 +8,7 @@ class ViewApplicants extends StatelessWidget {
 
       appBar: new AppBar
         (
-        title: new Text(' All Sponsorships '),
+        title: new Text(' Applicants '),
         centerTitle: true,
       ),
       body: getBody(),
